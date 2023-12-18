@@ -11,13 +11,13 @@ const error = document.querySelector('.error');
 const catInfo = document.querySelector('.cat-info');
 
 breedSelect.style.display = 'none';
-
+error.style.display = 'none';
 fetchBreeds()
   .then(data => {
     const options = data.data;
 
     loader.style.display = 'block';
-    error.style.display = 'none';
+    
 
     breedSelect.innerHTML = options
       .map(breed => `<option value="${breed.id}">${breed.name}</option>`)
@@ -36,6 +36,7 @@ fetchBreeds()
 breedSelect.addEventListener('change', event => {
   error.style.display = 'none';
   loader.style.display = 'block';
+  breedSelect.style.display = 'none';
   catInfo.style.display = 'none';
 
   const breed = event.target.value;
@@ -62,5 +63,9 @@ breedSelect.addEventListener('change', event => {
     .catch(() => {
       loader.style.display = 'none';
       error.style.display = 'block';
+    })
+    .finally(() => {
+      breedSelect.style.display = 'block';
     });
+
 });
