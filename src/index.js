@@ -46,10 +46,10 @@ breedSelect.addEventListener('change', event => {
 
       if (catData) {
         catInfo.innerHTML = `
-          <p>${catData.name}</p>
-          <p>${catData.description}</p>
-          <p>${catData.temperament}</p>
-          <img src='${data.data[0].url}' >`;
+          <p class="cat-name">${catData.name}</p>
+          <p class="cat-desc">${catData.description}</p>
+          <p class="cat-temper">${catData.temperament}</p>
+          <img class="cat-img" src='${data.data[0].url}' >`;
       } else {
         catInfo.innerHTML = Notiflix.Notify.failure(
           'No information available for this breed'

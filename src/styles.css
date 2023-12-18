@@ -48,3 +48,13 @@
     }
   }
       
+  .cat-img{
+    max-width: 600px;
+    max-height: auto;
+    box-shadow: 5px 0 10px rgba(248, 248, 248, 0.3);
+  }
+.cat-name{
+    text-transform: uppercase;
+    font-size: large;
+}
+  
